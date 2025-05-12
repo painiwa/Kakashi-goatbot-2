@@ -5,16 +5,16 @@ module.exports = {
 		name: "notification",
 		aliases: ["notify", "noti"],
 		version: "1.7",
-		author: "NTKhang",
+		author: "Messie Osango", 
 		countDown: 5,
 		role: 2,
 		description: {
 			vi: "Gửi thông báo từ admin đến all box",
-			en: "Send notification from admin to all box"
+			fr: "Envoyer une notification aux groupes" 
 		},
 		category: "owner",
 		guide: {
-			en: "{pn} <tin nhắn>"
+			fr: "{pn} <message>" 
 		},
 		envConfig: {
 			delayPerGroup: 250
@@ -29,12 +29,12 @@ module.exports = {
 			sentNotification: "✅ Đã gửi thông báo đến %1 nhóm thành công",
 			errorSendingNotification: "Có lỗi xảy ra khi gửi đến %1 nhóm:\n%2"
 		},
-		en: {
-			missingMessage: "Please enter the message you want to send to all groups",
-			notification: "Notification from admin bot to all chat groups (do not reply to this message)",
-			sendingNotification: "Start sending notification from admin bot to %1 chat groups",
-			sentNotification: "✅ Sent notification to %1 groups successfully",
-			errorSendingNotification: "An error occurred while sending to %1 groups:\n%2"
+		fr: { 
+			missingMessage: "╭───⌾⋅ 𝐸𝑅𝑅𝐸𝑈𝑅 ⋅⌾───╮\n│\n│   Veuillez entrer le message à envoyer\n│\n╰──────⌾⋅ ⌾ ⋅⌾──────╯",
+			notification: "╭───⌾⋅ 𝑁𝑂𝑇𝐼𝐹𝐼𝐶𝐴𝑇𝐼𝑂𝑁 ⋅⌾───╮\n│\n│   Message de l'administrateur\n│   (ne pas répondre à ce message)\n│\n│   ────────────────────────\n│   %1\n│\n╰──────⌾⋅ ⌾ ⋅⌾──────╯",
+			sendingNotification: "╭───⌾⋅ 𝑆𝑇𝐴𝑇𝑈𝑇 ⋅⌾───╮\n│\n│   Envoi en cours à %1 groupes...\n│\n╰──────⌾⋅ ⌾ ⋅⌾──────╯",
+			sentNotification: "╭───⌾⋅ 𝑆𝑈𝐶𝐶𝐸𝑆 ⋅⌾───╮\n│\n│   ✅ Notification envoyée à %1 groupes\n│\n╰──────⌾⋅ ⌾ ⋅⌾──────╯",
+			errorSendingNotification: "╭───⌾⋅ 𝐸𝑅𝑅𝐸𝑈𝑅𝑆 ⋅⌾───╮\n│\n│   ⚠️ Problèmes avec %1 groupes:\n│   %2\n│\n╰──────⌾⋅ ⌾ ⋅⌾──────╯"
 		}
 	},
 
@@ -42,8 +42,10 @@ module.exports = {
 		const { delayPerGroup } = envCommands[commandName];
 		if (!args[0])
 			return message.reply(getLang("missingMessage"));
+		
+		const notificationMessage = getLang("notification", args.join(" "));
 		const formSend = {
-			body: `${getLang("notification")}\n────────────────\n${args.join(" ")}`,
+			body: notificationMessage,
 			attachment: await getStreamsFromAttachment(
 				[
 					...event.attachments,
@@ -95,6 +97,7 @@ module.exports = {
 			msg += getLang("sentNotification", sendSucces) + "\n";
 		if (sendError.length > 0)
 			msg += getLang("errorSendingNotification", sendError.reduce((a, b) => a + b.threadIDs.length, 0), sendError.reduce((a, b) => a + `\n - ${b.errorDescription}\n  + ${b.threadIDs.join("\n  + ")}`, ""));
-		message.reply(msg);
+		
+		message.reply(msg || "╭───⌾⋅ 𝑆𝑇𝐴𝑇𝑈𝑇 ⋅⌾───╮\n│\n│   Opération terminée\n│\n╰──────⌾⋅ ⌾ ⋅⌾──────╯");
 	}
 };

@@ -23,7 +23,7 @@ function formatResponse(content) {
 │
 │   ${content}
 │
-│   ┐(‘～`;)┌
+│   ┐('～\`;)┌
 │
 ╰──────⌾⋅ ⌾ ⋅⌾──────╯`;
 }

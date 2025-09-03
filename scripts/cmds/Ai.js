@@ -65,7 +65,7 @@ module.exports = {
         const input = event.body.slice(2).trim();
         if (!input) {
             return message.reply(
-                formatResponse("Je suis activé par Kakashi pour répondre à vos questions\nPrécisez-les pour que j'y réponde")
+                formatResponse("salut humainje suis octabot créer par octavio wina un codeur jeunes alors\nPrécisez-les pour que j'y réponde")
             );
         }
 

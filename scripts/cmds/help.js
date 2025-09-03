@@ -3,13 +3,13 @@ const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ 𝑀𝐸𝑆𝑆𝐼𝐸 𝕆𝐒𝐴𝐍𝐺𝐿 ]";
+const doNotDelete = "[ octavio wina]";
 
 module.exports = {
   config: {
     name: "help",
     version: "1.17",
-    author: "𝑀𝐸𝑆𝑆𝐼𝐸 𝑂𝑆𝐴𝑁𝐺𝑂",
+    author: "OCTAVIO wina",
     countDown: 10,
     role: 0,
     shortDescription: {
@@ -34,7 +34,7 @@ module.exports = {
       const categories = {};
       let msg = "";
 
-      msg += `╭──⌾⋅ 𝐾𝐴𝐾𝐴𝑆𝐻𝐼 𝐵𝑜𝑡 ⋅⌾──╮\n│\n│   ✰ 𝑀𝐸𝑆𝑆𝐼𝐸 𝑂𝑆𝐴𝑁𝐺𝑂 ✰\n│`;
+      msg += `╭──⌾⋅ 𝐾𝐴𝐾𝐴𝑆𝐻𝐼 𝐵𝑜𝑡 ⋅⌾──╮\n│\n│   ✰ octavio wina ✰\n│`;
 
       for (const [name, value] of commands) {
         if (value.config.role > 1 && role < value.config.role) continue;
@@ -59,7 +59,7 @@ module.exports = {
       });
 
       const totalCommands = commands.size;
-      msg += `\n│\n│ CONTACT 𝑀𝐸𝑆𝑆𝐼𝐸 𝑂𝑆𝐴𝑁𝐺𝑂  page   FACEBOOK:\n│\n│ https://www.facebook.com/profile.php?id=61568305950691\n│\n│ ╰──────⌾⋅ ⌾ ⋅⌾──────╯\n│ 𝑀𝐸𝑆𝑆𝐼𝐸 𝑂𝑆𝐴𝑁𝐺𝑂 ✯`;
+      msg += `\n│\n│ CONTACT messie osango  page   FACEBOOK:\n│\n│ https://www.facebook.com/profile.php?id=61568305950691\n│\n│ ╰──────⌾⋅ ⌾ ⋅⌾──────╯\n│ 𝑀𝐸𝑆𝑆𝐼𝐸 𝑂𝑆𝐴𝑁𝐺𝑂 ✯`;
 
       await message.reply(msg);
     } else {

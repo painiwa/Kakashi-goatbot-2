@@ -31,7 +31,7 @@ function formatResponse(content) {
 module.exports = { 
     config: { 
         name: 'ai',
-        author: 'messie osango',
+        author: 'octavio wina',
         role: 0,
         category: 'ai',
         shortDescription: 'IA avec design Kakashi',

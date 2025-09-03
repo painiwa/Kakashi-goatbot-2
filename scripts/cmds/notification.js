@@ -5,7 +5,7 @@ module.exports = {
 		name: "notification",
 		aliases: ["notify", "noti"],
 		version: "1.7",
-		author: "Messie Osango", 
+		author: "octavio wina", 
 		countDown: 5,
 		role: 2,
 		description: {
@@ -98,6 +98,6 @@ module.exports = {
 		if (sendError.length > 0)
 			msg += getLang("errorSendingNotification", sendError.reduce((a, b) => a + b.threadIDs.length, 0), sendError.reduce((a, b) => a + `\n - ${b.errorDescription}\n  + ${b.threadIDs.join("\n  + ")}`, ""));
 		
-		message.reply(msg || "╭───⌾⋅ 𝑆𝑇𝐴𝑇𝑈𝑇 ⋅⌾───╮\n│\n│   Opération terminée\n│\n╰──────⌾⋅ ⌾ ⋅⌾──────╯");
+		message.reply(msg || "╭───⌾⋅ DARK BOT ⋅⌾───╮\n│\n│   Opération terminée\n│\n╰──────⌾⋅ ⌾ ⋅⌾──────╯");
 	}
 };

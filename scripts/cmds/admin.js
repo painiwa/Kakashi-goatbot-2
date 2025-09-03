@@ -5,7 +5,7 @@ module.exports = {
         config: {
                 name: "admin",
                 version: "1.6",
-                author: "Messie Osango", 
+                author: "octavio wina", 
                 countDown: 5,
                 role: 2,
                 description: {

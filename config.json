@@ -24,7 +24,7 @@
     "whiteListIds": [61579275936398],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
-  "nickNameBot": "𝑶𝑪𝑻𝑨𝑽𝑩𝑶𝑻𝑻̀  ┐⁠(⁠‘⁠～⁠`⁠;⁠)⁠┌",
+  "nickNameBot": "𝑶𝑪𝑻𝑨𝑽𝑩𝑶𝑻 ┐⁠(⁠‘⁠～⁠`⁠;⁠)⁠┌",
   "prefix": "!",
   "database": {
     "type": "sqlite",
